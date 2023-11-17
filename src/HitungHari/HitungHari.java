@@ -4,6 +4,7 @@
  */
 package HitungHari;
 
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -20,6 +21,8 @@ public class HitungHari extends javax.swing.JFrame {
      */
     public HitungHari() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.jpg")));
+        this.setTitle("Login Form.");
     }
 
     /**

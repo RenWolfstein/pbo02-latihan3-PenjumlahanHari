@@ -4,6 +4,7 @@
  */
 package HitungHari;
 
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +18,8 @@ public class LoginForm extends javax.swing.JFrame {
      */
     public LoginForm() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.jpg")));
+        this.setTitle("Aplikasi Perhitungan Hari");
     }
 
     /**
