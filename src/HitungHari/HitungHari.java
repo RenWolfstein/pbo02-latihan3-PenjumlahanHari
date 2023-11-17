@@ -259,6 +259,8 @@ public class HitungHari extends javax.swing.JFrame {
             }else{
                 jumlahHari = 31;
             }
+            lblJumlahHari.setText("Jumlah Hari Pada Bulan " + cmbBulan.getSelectedItem() +
+                    " tahun "+ tahun + " adalah " + jumlahHari);
         }
     }//GEN-LAST:event_btnHitungActionPerformed
 
