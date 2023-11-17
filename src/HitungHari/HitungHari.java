@@ -34,15 +34,15 @@ public class HitungHari extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        tfTahun = new javax.swing.JTextField();
+        cmbBulan = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         lblJumlahHari = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnHitung = new javax.swing.JButton();
+        btnHapus = new javax.swing.JButton();
+        btnSimpan = new javax.swing.JButton();
+        btnKeluar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,7 +55,7 @@ public class HitungHari extends javax.swing.JFrame {
 
         jLabel2.setText("Bulan");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "Maret", "April", "Mei", "Juni", "July", "Agustus", "September", "October", "November", "Desember" }));
+        cmbBulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "Maret", "April", "Mei", "Juni", "July", "Agustus", "September", "October", "November", "Desember" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -68,8 +68,8 @@ public class HitungHari extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(42, 42, 42)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox1, 0, 121, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(cmbBulan, 0, 121, Short.MAX_VALUE)
+                    .addComponent(tfTahun))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -78,11 +78,11 @@ public class HitungHari extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbBulan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
 
@@ -111,18 +111,23 @@ public class HitungHari extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(153, 204, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton1.setText("Hitung");
+        btnHitung.setText("Hitung");
 
-        jButton2.setText("Hapus");
-
-        jButton3.setText("Simpan");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnHapus.setText("Hapus");
+        btnHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnHapusActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Keluar");
+        btnSimpan.setText("Simpan");
+        btnSimpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimpanActionPerformed(evt);
+            }
+        });
+
+        btnKeluar.setText("Keluar");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -130,13 +135,13 @@ public class HitungHari extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btnHitung)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btnHapus)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(btnSimpan)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(btnKeluar)
                 .addGap(19, 19, 19))
         );
         jPanel4Layout.setVerticalGroup(
@@ -144,10 +149,10 @@ public class HitungHari extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnHitung)
+                    .addComponent(btnHapus)
+                    .addComponent(btnSimpan)
+                    .addComponent(btnKeluar))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -195,7 +200,7 @@ public class HitungHari extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // Coding untuk membuat tombol simpan menyimpan dan meng ekspor data menjadi file .txt
         try{
                 BufferedWriter out = new BufferedWriter(new FileWriter("JumlahHari.txt"));
@@ -205,7 +210,14 @@ public class HitungHari extends javax.swing.JFrame {
             }catch (Exception e){
                 System.err.println("Error: " + e.getMessage());
             }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnSimpanActionPerformed
+
+    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
+        // Koding Tombol Hapus
+        tfTahun.setText("");
+        cmbBulan.setSelectedItem("January");
+        lblJumlahHari.setText("Jumlah Hari Pada Bulan ... Tahun ... Adalah ...");
+    }//GEN-LAST:event_btnHapusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,18 +255,18 @@ public class HitungHari extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnHapus;
+    private javax.swing.JButton btnHitung;
+    private javax.swing.JButton btnKeluar;
+    private javax.swing.JButton btnSimpan;
+    private javax.swing.JComboBox<String> cmbBulan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblJumlahHari;
+    private javax.swing.JTextField tfTahun;
     // End of variables declaration//GEN-END:variables
 }
