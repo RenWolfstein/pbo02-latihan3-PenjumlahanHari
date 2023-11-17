@@ -4,6 +4,10 @@
  */
 package HitungHari;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USER
@@ -33,7 +37,7 @@ public class HitungHari extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        lblJumlahHari = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -85,7 +89,7 @@ public class HitungHari extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel3.setText("Jumlah Hari Pada Bulan ... Tahun ... Adalah ...");
+        lblJumlahHari.setText("Jumlah Hari Pada Bulan ... Tahun ... Adalah ...");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -93,14 +97,14 @@ public class HitungHari extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblJumlahHari, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel3)
+                .addComponent(lblJumlahHari)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -112,6 +116,11 @@ public class HitungHari extends javax.swing.JFrame {
         jButton2.setText("Hapus");
 
         jButton3.setText("Simpan");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Keluar");
 
@@ -186,6 +195,18 @@ public class HitungHari extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // Coding untuk membuat tombol simpan menyimpan dan meng ekspor data menjadi file .txt
+        try{
+                BufferedWriter out = new BufferedWriter(new FileWriter("JumlahHari.txt"));
+                out.write(lblJumlahHari.getText());
+                JOptionPane.showMessageDialog(null, "Berhasil disimpan dalam file");
+                out.close();
+            }catch (Exception e){
+                System.err.println("Error: " + e.getMessage());
+            }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,11 +250,11 @@ public class HitungHari extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblJumlahHari;
     // End of variables declaration//GEN-END:variables
 }
