@@ -34,7 +34,7 @@
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="tfUser" min="-2" pref="114" max="-2" attributes="0"/>
-                          <Component id="tfPass" min="-2" pref="114" max="-2" attributes="0"/>
+                          <Component id="tfPass" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -87,7 +87,10 @@
     </Component>
     <Component class="javax.swing.JTextField" name="tfUser">
     </Component>
-    <Component class="javax.swing.JTextField" name="tfPass">
+    <Component class="javax.swing.JPasswordField" name="tfPass">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
