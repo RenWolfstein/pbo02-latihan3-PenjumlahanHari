@@ -22,7 +22,7 @@ public class HitungHari extends javax.swing.JFrame {
     public HitungHari() {
         initComponents();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.jpg")));
-        this.setTitle("Login Form.");
+        this.setTitle("Aplikasi Perhitungan Hari");
     }
 
     /**
