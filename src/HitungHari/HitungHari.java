@@ -244,20 +244,29 @@ public class HitungHari extends javax.swing.JFrame {
                 JOptionPane.ERROR_MESSAGE);
         } else {
             int tahun = Integer.parseInt(tfTahun.getText());
-            int jumlahHari;
-            if (cmbBulan.getSelectedItem().equals("February")) {
-                  if ((tahun % 4 == 0) && !(tahun % 100 == 0) || (tahun % 400 == 0)) {
+            int jumlahHari = 0;
+            switch (cmbBulan.getSelectedIndex()) {
+                case 1:
+                    if ((tahun % 4 == 0) && !(tahun % 100 == 0) || (tahun % 400 == 0)) {
                     jumlahHari = 29;
                 } else {
                       jumlahHari = 28;
                 }
-            } else if(cmbBulan.getSelectedItem().equals("April") ||
-                    cmbBulan.getSelectedItem().equals("Juni") ||
-                    cmbBulan.getSelectedItem().equals("September") ||
-                    cmbBulan.getSelectedItem().equals("November")){
+                    break;
+                case 3:
                     jumlahHari = 30;
-            }else{
-                jumlahHari = 31;
+                    break;
+                case 5:
+                    jumlahHari = 30;
+                    break;
+                case 8:
+                    jumlahHari = 30;
+                    break;
+                case 10:
+                    jumlahHari = 30;
+                    break;
+                default:
+                    jumlahHari = 31;
             }
             lblJumlahHari.setText("Jumlah Hari Pada Bulan " + cmbBulan.getSelectedItem() +
                     " tahun "+ tahun + " adalah " + jumlahHari);
