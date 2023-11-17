@@ -4,6 +4,7 @@
  */
 package HitungHari;
 
+import java.awt.event.KeyEvent;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import javax.swing.JOptionPane;
@@ -54,6 +55,12 @@ public class HitungHari extends javax.swing.JFrame {
         jLabel1.setText("Tahun");
 
         jLabel2.setText("Bulan");
+
+        tfTahun.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfTahunKeyTyped(evt);
+            }
+        });
 
         cmbBulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "Maret", "April", "Mei", "Juni", "July", "Agustus", "September", "October", "November", "Desember" }));
 
@@ -272,6 +279,19 @@ public class HitungHari extends javax.swing.JFrame {
                     " tahun "+ tahun + " adalah " + jumlahHari);
         }
     }//GEN-LAST:event_btnHitungActionPerformed
+
+    private void tfTahunKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfTahunKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (! ((Character.isDigit(c)||
+                (c == KeyEvent.VK_BACK_SPACE)||
+                (c == KeyEvent.VK_DELETE))
+                )) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "Masukkan hanya angka 0-9!");
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfTahunKeyTyped
 
     /**
      * @param args the command line arguments
