@@ -112,6 +112,11 @@ public class HitungHari extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnHitung.setText("Hitung");
+        btnHitung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHitungActionPerformed(evt);
+            }
+        });
 
         btnHapus.setText("Hapus");
         btnHapus.addActionListener(new java.awt.event.ActionListener() {
@@ -228,6 +233,34 @@ public class HitungHari extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnKeluarActionPerformed
+
+    private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungActionPerformed
+        // TODO add your handling code here:
+        if (tfTahun.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Error: Tahun Belum diisi!",
+                "Error Error",
+                JOptionPane.ERROR_MESSAGE);
+        } else {
+            int tahun = Integer.parseInt(tfTahun.getText());
+            int jumlahHari;
+            if (cmbBulan.getSelectedItem().equals("February")) {
+                  if ((tahun % 4 == 0) && !(tahun % 100 == 0) || (tahun % 400 == 0)) {
+                    jumlahHari = 29;
+                } else {
+                      jumlahHari = 28;
+                }
+            } else if(cmbBulan.getSelectedItem().equals("April") ||
+                    cmbBulan.getSelectedItem().equals("Juni") ||
+                    cmbBulan.getSelectedItem().equals("September") ||
+                    cmbBulan.getSelectedItem().equals("November")){
+                    jumlahHari = 30;
+            }else{
+                jumlahHari = 31;
+            }
+        }
+    }//GEN-LAST:event_btnHitungActionPerformed
 
     /**
      * @param args the command line arguments
